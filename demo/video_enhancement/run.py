@@ -59,7 +59,7 @@ if __name__ == '__main__':
     print('The enhanced videos will be saved in: {0}\n'.format(os.path.join(args.example_path, 'enhanced')))
 
     # pre-defined arguments
-    fps = 25
+    fps = 60
     ema = 1 - 1 / fps
     cuda = torch.cuda.is_available()
 
@@ -76,9 +76,11 @@ if __name__ == '__main__':
         print('Process video: {0}...'.format(example))
         
         # define example path
-        original_video_path = os.path.join(args.example_path, 'original', example)
-        enhanced_video_path = os.path.join(args.example_path, 'enhanced', example)
+        original_video_path = os.path.join(args.example_path, 'original',"test_hd.mp4")
+        enhanced_video_path = os.path.join(args.example_path, 'enhanced',"test_hd.mp4")
 
+        print("Video Path", original_video_path)
+        # break
         # read input videos
         original_frames = load_video_frames(original_video_path)
 
@@ -115,7 +117,8 @@ if __name__ == '__main__':
             enhanced = cv2.cvtColor(enhanced.astype('uint8'), cv2.COLOR_RGB2BGR)
             enhanced_vw.write(enhanced)
 
-        enhanced_vw.release()
+            enhanced_vw.release()
+            break
 
         print('\n')
 
