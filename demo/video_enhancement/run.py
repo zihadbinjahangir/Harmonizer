@@ -59,7 +59,7 @@ if __name__ == '__main__':
     print('The enhanced videos will be saved in: {0}\n'.format(os.path.join(args.example_path, 'enhanced')))
 
     # pre-defined arguments
-    fps = 60
+    fps = 30
     ema = 1 - 1 / fps
     cuda = torch.cuda.is_available()
 
