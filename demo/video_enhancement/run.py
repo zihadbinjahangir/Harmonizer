@@ -117,8 +117,8 @@ if __name__ == '__main__':
             enhanced = cv2.cvtColor(enhanced.astype('uint8'), cv2.COLOR_RGB2BGR)
             enhanced_vw.write(enhanced)
 
-            enhanced_vw.release()
-            break
+        enhanced_vw.release()
+        break
 
         print('\n')
 
